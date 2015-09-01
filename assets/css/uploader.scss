@@ -1,0 +1,194 @@
+
+$color_dark:    #000000;
+$color_white:   #ffffff;
+$color_gray:    #cccccc;
+$color_gray_lighter:    #eeeeee;
+
+$color_warning:                 #f0ad4e;
+$color_warning_hover:           #eea236;
+$color_warning_border:          #ec971f;
+$color_warning_border_hover:    #d58512;
+
+$color_success:                 #5cb85c;
+$color_success_hover:           #449d44;
+$color_success_border:          #4cae4c;
+$color_success_border_hover:    #398439;
+
+$color_danger:                  #ff7979;
+
+$uploader_body_height:          150px;
+
+div {
+    box-sizing: border-box;
+}
+
+
+.uploader-wrapper {
+    border-radius: 4px;
+    width: 100%;
+    background-color: $color_white;
+    button {
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 14px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        transition: all 400ms;
+    }
+    button:focus {
+        outline: none;
+    }
+    button:hover {
+        border-color: $color_gray;
+    }
+    button[disabled="disabled"] {
+        opacity: 0.5;
+        cursor: no-drop;
+    }
+    .uploader-full {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .uploader-hide {
+        display: none !important;
+    }
+}
+
+.uploader-body {
+    text-align: center;
+    padding: 10px;
+    min-height: $uploader_body_height + 5;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .preview-wrapper {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        margin: 0 10px;
+        overflow: hidden;
+    }
+    .preview-item {
+        height: $uploader_body_height - 20;
+        img {
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            height: $uploader_body_height - 20;
+        }
+    }
+    .preview-overlay {
+        border-radius: 4px;
+        background-color: rgba($color_dark, 0.5);
+    }
+    .preview-status {
+        border-radius: 4px;
+        cursor: pointer;
+        opacity: 0;
+        padding-top: 100%;
+        -webkit-transition: all 400ms;
+        -moz-transition: all 400ms;
+        -ms-transition: all 400ms;
+        -o-transition: all 400ms;
+        transition: all 400ms;
+    }
+    .preview-status-active {
+        padding-top: 20%;
+        opacity: 1;
+    }
+    .preview-progress {
+        border-radius: 4px;
+        width: 0;
+        background-color: rgba($color_success, 0.7);
+    }
+    .uploader-hint {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        line-height: $uploader_body_height - 20;
+    }
+    .uploader-item {
+        //height: $uploader_body_height - 20;
+    }
+}
+
+.uploader-footer {
+    padding: 10px;
+    background-color: $color_gray_lighter;
+    .btn-warning {
+        margin-left: 15px;
+        color: $color_white;
+        background-color: $color_warning;
+        border-color: $color_warning_border;
+    }
+    .btn-warning:hover {
+        background-color: $color_warning_hover;
+        border-color: $color_warning_border_hover;
+    }
+    .btn-warning[disabled]:hover {
+        background-color: $color_warning;
+        border-color: $color_warning_border;
+    }
+    .btn-success {
+        margin-left: 15px;
+        color: $color_white;
+        background-color: $color_success;
+        border-color: $color_success_border;
+    }
+    .btn-success:hover {
+        background-color: $color_success_hover;
+        border-color: $color_success_border_hover;
+    }
+    .btn-success[disabled]:hover {
+        background-color: $color_success;
+        border-color: $color_success_border;
+    }
+}
+
+.uploader-footer::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?vrqaqg');
+    src:url('../fonts/icomoon.eot?#iefixvrqaqg') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?vrqaqg') format('truetype'),
+    url('../fonts/icomoon.woff?vrqaqg') format('woff'),
+    url('../fonts/icomoon.svg?vrqaqg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross:before {
+    color: $color_danger;
+    font-size: 50px;
+    content: "\e600";
+}
+.icon-checkmark:before {
+    color: $color_success;
+    font-size: 50px;
+    content: "\e601";
+}

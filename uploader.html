@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploader</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/img/logo.png">
+    <link href="assets/css/demo.css" rel="stylesheet">
+    <link href="assets/css/uploader.css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <div class="title"><img class="logo" src="assets/img/logo.png"><h1>Simple File Uploader</h1></div>
+</div>
+<div id="upload-zone"></div>
+<script src="assets/lib/jquery.min.js"></script>
+<script src="assets/js/uploader.js"></script>
+<script>
+    $(function() {
+        var uploader = new Uploader({
+            selector: $('#upload-zone'),
+            multiple: true,
+            accept: 'image/*',
+            ajax: {
+                url: 'server/upload.php',
+                data: {id: 12, type: 1},
+                callback: function(json) {
+                    console.log(json);
+                }
+            },
+            language: {
+                hint: 'Click to upload',
+                cancel: 'Cancel',
+                clear: 'Clear',
+                upload: 'Upload',
+                add: 'Add'
+            }
+        });
+        uploader.init();
+    });
+</script>
+</body>
+</html>

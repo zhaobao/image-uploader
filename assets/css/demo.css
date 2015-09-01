@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url(../img/az_subtle.png);
+    font-family: sans-serif;
+}
+.header {
+    width: 960px;
+    margin: 50px auto;
+}
+.logo {
+    width: 50px;
+    float: left;
+}
+h1 {
+    padding-left: 65px;
+    line-height: 50px;
+}
+#upload-zone {
+    border-radius: 4px;
+    margin: 50px auto;
+    width: 960px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
