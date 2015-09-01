@@ -14,22 +14,21 @@
 <script src="assets/js/uploader.js"></script>
 $(function() {
     var uploader = new Uploader({
-        selector: $('#upload-zone'),
-        multiple: true,
-        accept: 'image/*',
+        selector: $('#upload-zone'),    // upload区域
+        multiple: true,                 //是否支持多文件
+        accept: 'image/*',              // 文件类型
         ajax: {
-            url: 'server/upload.php',
-            data: {id: 12, type: 1},
-            callback: function(json) {
+            url: 'server/upload.php',   // 上传地址
+            data: {id: 12, type: 1},    // 上传附加参数
+            callback: function(json) {  // 成功后的回调
                 console.log(json);
             }
         },
         language: {
-            hint: 'Click to upload',
-            cancel: 'Cancel',
-            clear: 'Clear',
-            upload: 'Upload',
-            add: 'Add'
+            hint: 'Click to upload',    // 点击文字提示
+            clear: 'Clear',             // 清空文字
+            upload: 'Upload',           // 上传文字
+            add: 'Add'                  // 添加文字
         }
     });
     uploader.init();
