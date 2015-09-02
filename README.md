@@ -5,7 +5,6 @@
 * 支持预览
 * 多文件上传
 * 进度条
-* 
 
 ## 使用
 ```
@@ -15,7 +14,7 @@
 $(function() {
     var uploader = new Uploader({
         selector: $('#upload-zone'),    // upload区域
-        multiple: true,                 //是否支持多文件
+        multiple: true,                 // 是否支持多文件
         accept: 'image/*',              // 文件类型
         ajax: {
             url: 'server/upload.php',   // 上传地址
